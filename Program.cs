@@ -6,10 +6,12 @@ namespace LineComparision
     {
         static void Main(string[] args)
         {
-            double xCoordinates = GetEndPointsOfX();
-            double yCoordinates = GetEndPointsOfY();
-            double distance = DistanceBwtTwoPoints(xCoordinates, yCoordinates);
-            Console.WriteLine("Distance between the two points::" + distance);
+            double line1distance = DistanceBwtTwoPoints();
+            Console.WriteLine("Distance between the two points::" + line1distance);
+            double line2Distance = DistanceBwtTwoPoints();
+            Console.WriteLine("Distance between two points::" + line2Distance);
+            string checkEquality = CheckEqality(line1distance,line2Distance);
+            Console.WriteLine(checkEquality);
             Console.ReadKey();
         }
 
@@ -29,10 +31,20 @@ namespace LineComparision
             return Math.Pow((y2 - y1), 2);
         }
         
-        public static double DistanceBwtTwoPoints(double xCordinates,double yCoridinates)
+        public static double DistanceBwtTwoPoints()
         {
-            double distance=Math.Sqrt(xCordinates + yCoridinates);
+            double xCoordinates = GetEndPointsOfX();
+            double yCoordinates = GetEndPointsOfY();
+            double distance=Math.Sqrt(xCoordinates + yCoordinates);
             return Math.Round(distance, 2);
         }
+
+        public static string CheckEqality(double line1,double line2)
+        {
+            bool checkLines = line1.Equals(line2);
+            Console.WriteLine(checkLines);
+            return checkLines == true ? "Both lines are equal" : "Both lines are not equal";
+        }
+        
     }
 }
