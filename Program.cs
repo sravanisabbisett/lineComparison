@@ -16,29 +16,16 @@ namespace LineComparision
         }
 
         /// <summary>
-        /// Gets the end points of line for x coordinates and returns power of difference.
-        /// </summary>
-        /// <returns></returns>
-       
-        public static double GetEndPointsOfX()
-        {
-            Console.WriteLine("Enter X1,X2");
-            var x1 = Convert.ToDouble(Console.ReadLine());
-            var x2 = Convert.ToDouble(Console.ReadLine());
-            return Math.Pow((x2 - x1), 2);
-        }
-
-        /// <summary>
-        /// Gets the end points of line y coordinates and returns power of difference
+        /// Gets the end points of line  coordinates and returns power of difference
         /// </summary>
         /// <returns></returns>
         
-        public static double GetEndPointsOfY()
+        public static double GetEndPointsOfLine()
         {
-            Console.WriteLine("Enter Y1,Y2");
-            var y1 = Convert.ToDouble(Console.ReadLine());
-            var y2 = Convert.ToDouble(Console.ReadLine());
-            return Math.Pow((y2 - y1), 2);
+            Console.WriteLine("Enter endPoint1,endPoint2");
+            var endPoint1 = Convert.ToDouble(Console.ReadLine());
+            var endPoint2 = Convert.ToDouble(Console.ReadLine());
+            return Math.Pow((endPoint2 - endPoint1), 2);
         }
 
         /// <summary>
@@ -48,8 +35,8 @@ namespace LineComparision
         
         public static double DistanceBwtTwoPoints()
         {
-            double xCoordinates = GetEndPointsOfX();
-            double yCoordinates = GetEndPointsOfY();
+            double xCoordinates = GetEndPointsOfLine();
+            double yCoordinates = GetEndPointsOfLine();
             double distance=Math.Sqrt(xCoordinates + yCoordinates);
             return Math.Round(distance, 2);
         }
